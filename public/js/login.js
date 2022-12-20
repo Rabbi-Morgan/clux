@@ -10,7 +10,7 @@ $(document).ready(function(){
         var password = document.getElementById("password").value;
 
         var settings = {
-            "url": "http://localhost:3000/login",
+            "url": "/login",
             "method": "POST",
             "headers": {
               "Content-Type": "application/json",

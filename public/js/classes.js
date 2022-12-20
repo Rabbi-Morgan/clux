@@ -2,7 +2,7 @@ $(window).on('load',function(){
     var class_div = $("#class");
 
     var settings = {
-        "url": "http://localhost:3000/classes",
+        "url": "/classes",
         "method": "GET",
       };
       

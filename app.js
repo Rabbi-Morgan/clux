@@ -21,7 +21,7 @@ app.use(session({
 }))
 
 // Client Ui endpoints
-app.get('/login', (req,res)=>{
+app.get('/', (req,res)=>{
     return res.render('login')
 })
 
@@ -34,9 +34,9 @@ app.get('/listclasses', (req,res)=>{
 })
 
 // Api endpoints
-app.get('/', async (req,res)=>{
-    res.json("Bumps can take request now!");
-});
+// app.get('/', async (req,res)=>{
+//     res.json("Bumps can take request now!");
+// });
 
 app.get('/classes', async (req,res)=>{
     const {username, password} = req.session;

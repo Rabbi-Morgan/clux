@@ -11,7 +11,7 @@ $(document).ready(function(){
         var record_class = $("record_class").value
 
         var settings = {
-            "url": "http://localhost:3000/addclass",
+            "url": "/addclass",
             "method": "POST",
             "headers": {
               "Content-Type": "application/json",

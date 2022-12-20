@@ -8,7 +8,7 @@ $(window).on('load',function(){
       
       $.ajax(settings).done(function (response) {
         if(response.error){
-            var url = "/login";
+            var url = "/";
             $(location).attr('href',url);     
         }else{
             var classes = response.results;

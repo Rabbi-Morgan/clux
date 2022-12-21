@@ -21,7 +21,7 @@ app.use(session({
 }))
 
 // Client Ui endpoints
-app.get('/', (req,res)=>{
+app.get('/login', (req,res)=>{
     return res.render('login')
 })
 
@@ -33,10 +33,29 @@ app.get('/listclasses', (req,res)=>{
     return res.render('classes')
 })
 
+app.get('/', (req,res)=>{
+    res.render('home');
+})
+
 // Api endpoints
-// app.get('/', async (req,res)=>{
-//     res.json("Bumps can take request now!");
-// });
+app.get('/myclasses', async (req,res)=>{
+    const config = {
+        auth: {
+            username: process.env.CLUX_USERNAME,
+            password: process.env.CLUX_PASSWORD
+          },
+        headers: {
+            'Accept-Encoding': 'application/json',
+        }
+    }
+
+    try {
+        const response = await axios.get(process.env.API_BASE_URL,config);
+        res.json(response.data);
+    }catch(error){
+        console.log(error.message)
+    }
+});
 
 app.get('/classes', async (req,res)=>{
     const {username, password} = req.session;

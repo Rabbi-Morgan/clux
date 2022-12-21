@@ -27,9 +27,9 @@ $(document).ready(function(){
           
           $.ajax(settings).done(function (response) {
             if(!response.error){
-                message.html("<div class='alert alert-success'>" + response.message + '</div>');
-                $("add_btn").text('<i class="fa fa-plus"></i> Create')
-            }
+                var url = "/listclasses";
+                $(location).attr('href',url);
+              }
           });
     })
    

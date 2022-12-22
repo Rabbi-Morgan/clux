@@ -163,19 +163,6 @@ app.post('/addclass',async (req,res) => {
 
 });
 
-app.get('/logout', async (req,res)=>{
-    try{
-        const success = await req.session.destroy()
-        return res.json({
-            "error": false,
-            "message": "Logout successful"
-        })
-    }catch(error){
-        console.log(error.message)
-    }
-    
-})
-
 
 app.listen(PORT,()=>{
     console.log(`Server started running at port ${PORT}`);

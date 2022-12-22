@@ -17,7 +17,14 @@ textarea {
 .header {
     background-color: #555;
 }
-
+.createBtn {
+    color: white;
+    font-weight: bold;
+}
+.createBtn:hover {
+    color: white;
+    opacity: .9;
+}
 /* body {
     background-color: black;
     color: white;

@@ -48,8 +48,37 @@ $(window).on('load',function(){
                 <td>${dayOfWeek[endDate.getDay()]} ${monthOfYear[endDate.getMonth()]} ${endDate.getDate()} ${endDate.getFullYear()} ${endDate.getHours()>12? endDate.getHours()-12:endDate.getHours()}:${endDate.getMinutes()} ${endDate.getHours() > 12? "PM":"AM"}</td>
                 <td>${cls.end >  getCurrent() ?  "<span class='badge text-success  d-inline'><span class='bg-success mx-1 rounded-circle d-inline-block' style='width: 6px; height: 6px' ></span>Active</span>": "<span class='badge text-danger'><span class='bg-danger mx-1 rounded-circle d-inline-block' style='width: 6px; height: 6px' ></span>Past</span>" }</td>
                 <td><a class="btn btn-sm ${cls.end >  getCurrent() ?  "btn-success": "disabled btn-secondary"}" href="${cls.room_url}" ><i class="fa fa-sign-in"></i> Enter class</a></td>
-                <td><a class="btn btn-sm btn-danger" href=""><i class="fa fa-trash"></i> Delete</a></td>
-                <td><a class="btn btn-sm btn-warning" href=""><i class="fa fa-edit"></i> Edit</a></td>
+                <td><a class="btn btn-sm btn-danger" href="/class/delete/${cls.uuid}/"><i class="fa fa-trash"></i> Delete</a></td>
+                <td><a class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#${cls.slug}" href="/class/edit/${cls.uuid}/"><i class="fa fa-edit"></i> Edit</a> <div class="modal fade" id="${cls.slug}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Edit Class</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form method="POST" action="/class/edit/${cls.uuid}/">
+                        <input class="form-control" type="hidden" name="room_token" value="${cls.room_token}">
+                            <div class="form-floating mb-3">
+                                <textarea class="form-control" placeholder="Enter a description" style="height: 100px" name="description">${cls.description}</textarea>
+                                <label for="floatingTextarea2">Description</label>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col">
+                                    <label for="start">Start date</label>
+                                    <input class="form-control" type="datetime-local" name="start" value="${datetimeLocal(cls.start)}">
+                                </div>
+                                <div class="col">
+                                    <label for="end">End date</label>
+                                    <input class="form-control" type="datetime-local" name="end" value="${datetimeLocal(cls.start)}">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block w-100 rounded px-4 py-2 mt-3"><i class="fa fa-edit"></i> Edit</button>
+                        </form>
+                    </div>
+                  </div>
+                </div>
+              </div></td>
               </tr>`
             });
             dataHtml += "</tbody>"
@@ -62,4 +91,10 @@ $(window).on('load',function(){
 function getCurrent(){
     let DateString = new Date()
     return DateString.toISOString();
+}
+
+function datetimeLocal(datetime) {
+  const dt = new Date(datetime);
+  dt.setMinutes(dt.getMinutes() - dt.getTimezoneOffset());
+  return dt.toISOString().slice(0, 16);
 }

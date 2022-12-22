@@ -10,7 +10,7 @@ const fadeOutEffect = setInterval(() => {
       clearInterval(fadeOutEffect);
       preloader.style.display = "none";
     }
-  }, 300);
+  }, 250);
 
   window.addEventListener('load', function(){
     fadeOutEffect

@@ -15,7 +15,7 @@ $(window).on('load',function(){
        
             let classes = response.results;
             let dataHtml = `<table class="table px-4 classTable table-hover align-middle table table-striped table-bordered" id="anu_class"><thead>
-            <tr class=" bg-light">
+            <tr class="" style="background-color: #DAA425; color:white;">
               <th scope="col">Teacher</th>
               <th scope="col">Description</th>
               <th scope="col">Start date </th>
@@ -48,7 +48,7 @@ $(window).on('load',function(){
               </tr>`
             });
             dataHtml += `</tbody></table>
-        <div class='text-center my-5'><a href="/login" class='btn btn-primary'><i class="fa fa-sign-in"></i> Teacher Login</a></div>`
+        <div class='text-center my-5'><a href="/login" class='btn px-2' style="background-color: #DAA425; color: white;"><i class="fa fa-sign-in pl-2"></i> Teacher Login</a></div>`
             class_div.html(dataHtml);
             $('#anu_class').DataTable();
         });

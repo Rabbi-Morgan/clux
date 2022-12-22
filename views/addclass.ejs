@@ -10,9 +10,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+    <header class=" d-flex justify-content-center align-items-center header text-white py-4 px-4">
+        <div><img class="logo" src="./logo.png" alt=""></div>
+    </header>
     <div class="container-fluid">
-        <div class="row bg-primary text-white text-center py-3">
-            <h2>Add new class</h2>
+        <div class="row bg-secondary text-white text-center py-3">
+            <h3 class="h3">Add new class</h3>
         </div>
     </div>
     
@@ -48,7 +51,7 @@
                             <label for="record_class" class="form-check-label">Record class</label>
                             <input class="form-check-input" type="checkbox" name="record_class" id="record_class">
                         </div>
-                        <button type="submit" class="btn btn-primary btn-block w-100 rounded px-4 py-2 mt-3" id="add_btn"><i class="fa fa-plus"></i> Create</button>
+                        <button type="submit" style="background-color: #DAA425;" class="btn btn-block createBtn w-100 rounded px-4 py-2 mt-3" id="add_btn"><i class="fa fa-plus"></i> Create</button>
                     </form>
                 </div>
             </div>

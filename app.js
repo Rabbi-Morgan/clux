@@ -10,7 +10,8 @@ const PORT = process.env.PORT || 3000;
 
 app.set('view engine', 'ejs');
 
-app.use(express.json());
+app.use(express.json())
+app.use(express.urlencoded({ extended: false }))
 app.use(express.static('public'));
 
 app.use(session({
@@ -159,6 +160,80 @@ app.post('/addclass',async (req,res) => {
         }
     }catch(error){
         console.log(error.message)
+    }
+
+});
+
+
+
+
+app.get('/class/delete/:uuid',async (req,res) => {
+
+    const {username, password} = req.session;
+    if(!username || !password){
+        return res.json({
+            "error": true,
+            "message": "Forbidden!"
+        })
+    }
+    const config = {
+        auth: {
+            username: req.session.username,
+            password: req.session.password
+          },
+        headers: {
+            'Accept-Encoding': 'application/json',
+        }
+    }
+
+    
+    try {
+        const response = await axios.delete(`${process.env.API_BASE_URL}${req.params.uuid}/`,config);
+        return res.redirect('/listclasses')
+    }catch(error){
+        if(typeof error.response != 'undefined' && error.response.status == 404){
+            return res.json({
+                "error": true,
+                "message": "Class does not exist",
+            })
+        }else{
+            console.log(error.message);
+        }
+    }
+
+});
+
+app.post('/class/edit/:uuid',async (req,res) => {
+
+    const {username, password} = req.session;
+    if(!username || !password){
+        return res.json({
+            "error": true,
+            "message": "Forbidden!"
+        })
+    }
+    const config = {
+        auth: {
+            username: req.session.username,
+            password: req.session.password
+          },
+        headers: {
+            'Accept-Encoding': 'application/json',
+        }
+    }
+    
+    try {
+        const response = await axios.put(`${process.env.API_BASE_URL}${req.params.uuid}/`,req.body,config);
+        return res.redirect('/listclasses')
+    }catch(error){
+        if(typeof error.response != 'undefined' && error.response.status == 404){
+            return res.json({
+                "error": true,
+                "message": "Class does not exist",
+            })
+        }else{
+            console.log(error.message);
+        }
     }
 
 });

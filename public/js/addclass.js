@@ -28,7 +28,7 @@ $(document).ready(function(){
           $.ajax(settings).done(function (response) {
             if(!response.error){
                 var url = "/listclasses";
-                $(location).attr('href',url);
+                window.location.href  = url
               }
           });
     })

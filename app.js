@@ -16,7 +16,7 @@ app.use(express.static('public'));
 
 app.use(session({
   secret: process.env.SESSION_SECRET,
-  resave: false,
+  resave: true,
   saveUninitialized: true,
   cookie: { secure: false }
 }))
@@ -171,10 +171,7 @@ app.get('/class/delete/:uuid',async (req,res) => {
 
     const {username, password} = req.session;
     if(!username || !password){
-        return res.json({
-            "error": true,
-            "message": "Forbidden!"
-        })
+        return res.redirect("/login")
     }
     const config = {
         auth: {
@@ -207,10 +204,7 @@ app.post('/class/edit/:uuid',async (req,res) => {
 
     const {username, password} = req.session;
     if(!username || !password){
-        return res.json({
-            "error": true,
-            "message": "Forbidden!"
-        })
+        return res.redirect("/login")
     }
     const config = {
         auth: {

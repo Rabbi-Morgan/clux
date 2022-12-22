@@ -10,6 +10,8 @@
 textarea {
     resize: none;
 }
+
+
 /* body {
     background-color: black;
     color: white;
@@ -23,3 +25,7 @@ thead {
 table {
     background-color: rgba(88, 88, 88, .5);
 } */
+
+#anu_class_wrapper > div:nth-child(1) {
+    margin-bottom: 1rem !important;
+}

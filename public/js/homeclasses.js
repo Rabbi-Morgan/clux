@@ -1,4 +1,4 @@
- 
+
 
 let dayOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 let monthOfYear = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -14,7 +14,7 @@ $(window).on('load',function(){
       $.ajax(settings).done(function (response) {
        
             let classes = response.results;
-            let dataHtml = `<table class="table px-4 classTable table-hover align-middle "><thead class="">
+            let dataHtml = `<table class="table px-4 classTable table-hover align-middle table table-striped table-bordered" id="anu_class"><thead>
             <tr class=" bg-light">
               <th scope="col">Teacher</th>
               <th scope="col">Description</th>
@@ -47,8 +47,10 @@ $(window).on('load',function(){
                 <td><a class="btn btn-sm ${cls.end >  getCurrent() ?  "btn-success": "disabled btn-secondary"}" href="${cls.room_url}" ><i class="fa fa-sign-in"></i> Enter class</a></td>
               </tr>`
             });
-            dataHtml += `</tbody></table><div class='text-center my-3'><a href="/login" class='btn btn-primary'><i class="fa fa-sign-in"></i> Teacher Login</a></div>`
+            dataHtml += `</tbody></table>
+        <div class='text-center my-5'><a href="/login" class='btn btn-primary'><i class="fa fa-sign-in"></i> Teacher Login</a></div>`
             class_div.html(dataHtml);
+            $('#anu_class').DataTable();
         });
 
         function getCurrent(){
@@ -56,3 +58,4 @@ $(window).on('load',function(){
             return DateString.toISOString();
         }
 })
+

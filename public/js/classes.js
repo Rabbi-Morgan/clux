@@ -22,7 +22,9 @@ $(window).on('load',function(){
               <th scope="col">Status</th>
               <th scope="col">End date</th>
               <th scope="col">Status</th>
-              <th scope="col colspan=3">Action</th>
+              <th scope="col">Join</th>
+              <th scope="col">Delete</th>
+              <th scope="col">Edit</th>
             </tr>
         </thead> <tbody>`;
             classes.forEach(cls => {
@@ -52,6 +54,7 @@ $(window).on('load',function(){
             });
             dataHtml += "</tbody>"
             class_div.html(dataHtml);
+            $('#class').DataTable();
         }
       });    
 })

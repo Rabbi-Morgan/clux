@@ -1,14 +1,19 @@
-$(document).ready(function(){
+$(document).ready(()=>{
     $("#add_btn").on('click', function(e){
         e.preventDefault();
         $("#add_btn").text = "Processing...";
-        var description = $("#description").value;
-        var start = $("#start").value;
-        var end = $("#end").value;
+        // var description = $("description").value
+        let description = document.getElementById("description").value;
+        // var start = $("#start").value;
+        let start = document.getElementById("start").value
+        // var end = $("#end").value;
+        let end = document.getElementById("end").value
         var message = $("#message");
 
-        var max_participants = $("#max_participants").value;
-        var record_class = $("record_class").value
+        // var max_participants = $("#max_participants").value;
+        let max_participants = document.getElementById("max_participants").value
+        // var record_class = $("record_class").value
+        let record_class = document.getElementById("record_class").value
 
         var settings = {
             "url": "/addclass",
@@ -24,8 +29,8 @@ $(document).ready(function(){
               "record_class": record_class,
             }),
           };
-          
-          $.ajax(settings).done(function (response) {
+          // console.log(settings.data)
+          $.ajax(settings).done( response=>{
             if(!response.error){
                 var url = "/listclasses";
                 window.location.href  = url

@@ -3,7 +3,7 @@
 let dayOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 let monthOfYear = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
-$(window).on('load',function(){
+$(window).on('load',()=>{
     let class_div = $("#class");
 
     let settings = {
@@ -11,7 +11,7 @@ $(window).on('load',function(){
         "method": "GET",
       };
       
-      $.ajax(settings).done(function (response) {
+      $.ajax(settings).done( response=>{
        
             let classes = response.results;
             let dataHtml = `<table class="table px-4 classTable table-hover align-middle table table-striped table-bordered" id="anu_class"><thead>

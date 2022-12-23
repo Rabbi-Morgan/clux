@@ -25,8 +25,10 @@ $(window).on('load',()=>{
             </tr>
         </thead> <tbody>`;
             classes.forEach(cls => {
-              let startDate = new Date(cls.start);
-              let endDate = new Date(cls.end);
+              let startServerDate = new Date(cls.start);
+              let startDate = returnLocalTime(startServerDate)
+              let endServerDate = new Date(cls.end)
+              let endDate = returnLocalTime(endServerDate)
                 dataHtml = dataHtml + ` <tr>
                 <td><div class="d-flex align-items-center">
           <img
@@ -59,3 +61,6 @@ $(window).on('load',()=>{
         }
 })
 
+function returnLocalTime(dateData) {
+  return new Date(dateData.getTime() + dateData.getTimezoneOffset() * 60000)
+}

@@ -140,7 +140,7 @@ app.post('/addclass',async (req,res) => {
             'Accept-Encoding': 'application/json',
         }
     }
-
+    console.log(end)
     const data = {
         "description":  description,
         "start": start,
@@ -232,6 +232,11 @@ app.post('/class/edit/:uuid',async (req,res) => {
 
 });
 
+app.get("/logout",(req,res)=>{
+    req.session.destroy(()=>{
+        res.redirect("/login")
+    })
+})
 
 app.listen(PORT,()=>{
     console.log(`Server started running at port ${PORT}`);

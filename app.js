@@ -236,8 +236,8 @@ app.post('/validate',(req,res)=>{
     console.log(req.query)
     return res.json({
         pub_key: process.env.CLUBX_PUBK,
-        userid: 647303,
-        staus: true,
+        userid: req.query.userid,
+        status: true,
         is_teacher: true
     })
 })

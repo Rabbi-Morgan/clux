@@ -232,6 +232,11 @@ app.post('/class/edit/:uuid',async (req,res) => {
 
 });
 
+app.post('/validate',(req,res)=>{
+    console.log(req.query)
+    console.log(req.body)
+})
+
 app.get("/logout",(req,res)=>{
     req.session.destroy(()=>{
         res.redirect("/login")

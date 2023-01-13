@@ -234,7 +234,12 @@ app.post('/class/edit/:uuid',async (req,res) => {
 
 app.post('/validate',(req,res)=>{
     console.log(req.query)
-    console.log(req.body)
+    return res.json({
+        pub_key: process.env.CLUBX_PUBK,
+        userid: 647303,
+        staus: true,
+        is_teacher: true
+    })
 })
 
 app.get("/logout",(req,res)=>{

@@ -1,7 +1,8 @@
 let dayOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 let monthOfYear = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
-const CLUX_PUBK = "e7d9bb8617ca082c594fbeb1"
+// const CLUX_PUBK = "e7d9bb8617ca082c594fbeb1"
+const CLUX_PUBK = "23c3890de2e94adfba5b1acc"
 
 $(window).on('load',function(){
     let class_div = $("#class");
@@ -51,7 +52,7 @@ $(window).on('load',function(){
                 <td class="p">${dayOfWeek[startDate.getDay()]} ${monthOfYear[startDate.getMonth()]} ${startDate.getDate()} ${startDate.getFullYear()} ${startDate.getHours()>12? startDate.getHours()-12:startDate.getHours()}:${startDate.getMinutes()} ${startDate.getHours() > 11? "PM":"AM"}</td>
                 <td>${dayOfWeek[endDate.getDay()]} ${monthOfYear[endDate.getMonth()]} ${endDate.getDate()} ${endDate.getFullYear()} ${endDate.getHours()>12? endDate.getHours()-12:endDate.getHours()}:${endDate.getMinutes()} ${endDate.getHours() > 12? "PM":"AM"}</td>
                 <td>${endDate >  new Date() ?  "<span class='badge text-success  d-inline'><span class='bg-success mx-1 rounded-circle d-inline-block' style='width: 6px; height: 6px' ></span>Active</span>": "<span class='badge text-danger'><span class='bg-danger mx-1 rounded-circle d-inline-block' style='width: 6px; height: 6px' ></span>Past</span>" }</td>
-                <td><a class="btn btn-sm ${endDate >  new Date() ?  "btn-success": "disabled btn-secondary"}" target="_blank" href="https://app.learncube.com/api/virtual-classroom/class/start/?pub_key=${CLUX_PUBK}&room_token=${cls.room_token}&userid=647303" ><i class="fa fa-sign-in"></i> Enter class</a></td>
+                <td><a class="btn btn-sm ${endDate >  new Date() ?  "btn-success": "disabled btn-secondary"}" target="_blank" href="https://app.learncube.com/api/virtual-classroom/class/start/?pub_key=${CLUX_PUBK}&room_token=${cls.room_token}&userid=648013" ><i class="fa fa-sign-in"></i> Enter class</a></td>
                 <td><a class="btn btn-sm btn-danger" href="/class/delete/${cls.uuid}/"><i class="fa fa-trash"></i> Delete</a></td>
                 <td><a class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#${cls.slug}" href="/class/edit/${cls.uuid}/"><i class="fa fa-edit"></i> Edit</a> <div class="modal fade" id="${cls.slug}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">

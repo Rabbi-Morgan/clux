@@ -13,7 +13,7 @@ $(document).ready(()=>{
         // var max_participants = $("#max_participants").value;
         let max_participants = document.getElementById("max_participants").value
         // var record_class = $("record_class").value
-        let record_class = document.getElementById("record_class").value
+        let record_class = document.getElementById("record_class").checked
 
         var settings = {
             "url": "/addclass",

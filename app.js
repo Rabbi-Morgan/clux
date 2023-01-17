@@ -63,7 +63,7 @@ app.get('/classes', async (req,res)=>{
     if(!username || !password){
         return res.json({
             "error": true,
-            "message": "Forbidden!"
+            "message": "Invalid session"
         })
     }
     const config = {

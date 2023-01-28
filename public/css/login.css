@@ -17,7 +17,7 @@
     width: 100%;
     height: 100%;
     background: linear-gradient(rgba(218, 164, 37,.6), rgba(0,0,0,.7));
-    animation: flow 8s ease-in-out infinite;
+    animation: flow 4s ease-in-out infinite;
 }
 
 .imgCont img {
@@ -32,7 +32,7 @@
     justify-content: space-around;
     height: 100%;
     align-items: center;
-
+    
 }
 .logoCont {
     width: 7rem;
@@ -41,6 +41,7 @@
     background-color: rgba(0,0,0);
     padding: 1rem;
     border-radius: 50%;
+    animation: expandd 2s ease-in-out infinite ;
 }
 .logCont img {
     width: 100%;
@@ -74,13 +75,27 @@
 }
 @keyframes flow {
     0% {
-        opacity: .5;
+        opacity: .6;
     }
-    50% {
+    25% {
         opacity: .8;
     }
-    100% {
+    50% {
         opacity: 1;
+    }
+    100% {
+        opacity: .6;
+    }
+}
+@keyframes expandd {
+    0% {
+        transform: scale(.98);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(.98);
     }
 }
 @media screen and (max-width: 650px) {

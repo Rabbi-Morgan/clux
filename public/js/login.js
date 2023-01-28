@@ -1,15 +1,15 @@
 $(document).ready(function(){
    
-    var login_buttton = $("#login_btn");
-    var message = $("#message");
+    let login_buttton = $("#login_btn");
+    let message = $("#message");
 
     login_buttton.on('click',function(e){
         e.preventDefault();
         login_buttton.text("Processing...");
-        var username = document.getElementById("username").value;
-        var password = document.getElementById("password").value;
+        let username = document.getElementById("username").value;
+        let password = document.getElementById("password").value;
 
-        var settings = {
+        let settings = {
             "url": "/login",
             "method": "POST",
             "headers": {
@@ -26,7 +26,7 @@ $(document).ready(function(){
                 message.html("<div class='alert alert-danger'>" + response.message + '</div>');
                 login_buttton.text("Login");
             }else{
-                var url = "/listclasses";
+                let url = "/listclasses";
                 $(location).attr('href',url);            }
           });
     })

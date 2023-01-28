@@ -14,11 +14,11 @@ $(window).on('load',()=>{
       $.ajax(settings).done( response=>{
        
             let classes = response.results;
-            let dataHtml = `<table class="table px-4 classTable table-hover align-middle table table-striped table-bordered" id="anu_class"><thead>
-            <tr class="" style="background-color: #DAA425; color:white;">
+            let dataHtml = `<table class="table px-4 classTable table-hover align-middle table " id="anu_class"><thead>
+            <tr class="tableHead" style="background-color: #DAA425; color:white;">
               <th scope="col">Teacher</th>
               <th scope="col">Description</th>
-              <th scope="col">Start date </th>
+              <th scope="col">Start date</th>
               <th scope="col">End date</th>
               <th scope="col">Status</th>
               <th scope="col">Action</th>
@@ -29,7 +29,7 @@ $(window).on('load',()=>{
               let startDate = returnLocalTime(startServerDate)
               let endServerDate = new Date(cls.end)
               let endDate = returnLocalTime(endServerDate)
-                dataHtml = dataHtml + ` <tr>
+                dataHtml = dataHtml + ` <tr class="table-row-hover">
                 <td><div class="d-flex align-items-center">
           <img
               src="${cls.teacher_avatar}"
@@ -52,7 +52,11 @@ $(window).on('load',()=>{
             dataHtml += `</tbody></table>
         <div class='text-center my-5'><a href="/login" class='btn px-2' style="background-color: #DAA425; color: white;"><i class="fa fa-sign-in pl-2"></i> Teacher Login</a></div>`
             class_div.html(dataHtml);
-            $('#anu_class').DataTable();
+             $('#anu_class').DataTable( {
+        language: {
+            search: "Search Table:"
+        }
+    });
         });
 
       })

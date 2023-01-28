@@ -1,0 +1,20 @@
+body {
+
+    background: linear-gradient(to right, rgba(0, 0, 0, .7), rgba(0, 0, 0, .3)), url(../girlcom.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    background-attachment: fixed;
+}
+
+.mainCont {
+    padding: 1rem 0;
+    color: white;
+}
+
+.table-row-hover:hover {
+    background-color: rgba(255, 255, 255, .8) !important;
+}
+#anu_class input {
+    background-color: transparent !important;
+}

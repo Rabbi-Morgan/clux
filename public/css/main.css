@@ -42,19 +42,13 @@ textarea {
     color: white;
     opacity: .9;
 }
-/* body {
-    background-color: black;
+.tableHead {
+    font-size: 1.2rem;
+}
+#anu_class {
+    margin: 2rem auto !important;
     color: white;
 }
-.classTable {
-    color: white;
-}
-thead {
-    color: black;
-}
-table {
-    background-color: rgba(88, 88, 88, .5);
-} */
 
 #anu_class_wrapper > div:nth-child(1) {
     margin-bottom: 1rem !important;

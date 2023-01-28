@@ -1,0 +1,93 @@
+.mainSection {
+    width: 100%;
+    overflow: hidden;
+    height: 100vh;
+    margin: 0 !important; 
+    padding: 0;
+}
+.imgCont {
+    width: 50%;
+    position: relative;
+}
+.imgCont::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(218, 164, 37,.6), rgba(0,0,0,.7));
+    animation: flow 8s ease-in-out infinite;
+}
+
+.imgCont img {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+}
+.logCont {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    align-items: center;
+
+}
+.logoCont {
+    width: 7rem;
+    height: 7rem;
+    /* background-color: rgba(218, 164, 37); */
+    background-color: rgba(0,0,0);
+    padding: 1rem;
+    border-radius: 50%;
+}
+.logCont img {
+    width: 100%;
+    height: 100%;
+}
+.formCont {
+    width: 80%;
+    text-align: center;
+}
+#login_form {
+    text-align: left;
+}
+#password, #username {
+    border-radius: 0;
+    border: none;
+    border-bottom: 2px solid black;
+    
+}
+.formCont div h2 {
+    font-weight: 700;
+}
+.formCont div p {
+    font-weight: 500;
+}
+.forPass {
+    text-align: right;
+}
+#password:focus,  #username:focus {
+   outline: none;
+   box-shadow: none;
+}
+@keyframes flow {
+    0% {
+        opacity: .5;
+    }
+    50% {
+        opacity: .8;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@media screen and (max-width: 650px) {
+    .imgCont {
+        display: none;
+    }
+    .logCont {
+        width: 100%;
+    }
+}

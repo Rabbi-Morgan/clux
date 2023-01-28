@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(()=>{
    
     let login_buttton = $("#login_btn");
     let message = $("#message");
@@ -33,9 +33,19 @@ $(document).ready(function(){
     
 })
 
+const eyes = document.querySelector("label i");
 const passwordInput = document.getElementById("password");
 const showPasswordCheckbox = document.getElementById("showPassword");
 
 showPasswordCheckbox.addEventListener("change", function () {
   passwordInput.type = this.checked ? "text" : "password";
+  if(this.checked){
+    eyes.classList.remove("fa-eye-slash");
+    eyes.classList.add("fa-eye")
+  }else {
+    eyes.classList.remove("fa-eye");
+    eyes.classList.add("fa-eye-slash")
+
+  }
+
 });

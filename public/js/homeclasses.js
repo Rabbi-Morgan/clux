@@ -14,8 +14,8 @@ $(window).on('load',()=>{
       $.ajax(settings).done( response=>{
        
             let classes = response.results;
-            let dataHtml = `<table class="table px-4 classTable table-hover align-middle table " id="anu_class"><thead>
-            <tr class="tableHead" style="background-color: #DAA425; color:white;">
+            let dataHtml = `<table class="table p-4 rounded classTable bg-white table-hover align-middle table " id="anu_class"><thead>
+            <tr class="tableHead table-secondary" >
               <th scope="col">Teacher</th>
               <th scope="col">Description</th>
               <th scope="col">Start date</th>

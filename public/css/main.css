@@ -47,9 +47,9 @@ textarea {
 }
 #anu_class {
     margin: 2rem auto !important;
-    color: white;
+    /* color: white; */
 }
 
-#anu_class_wrapper > div:nth-child(1) {
+/* #anu_class_wrapper > div:nth-child(1) {
     margin-bottom: 1rem !important;
-}
+} */

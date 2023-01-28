@@ -91,3 +91,19 @@
         width: 100%;
     }
 }
+
+/* visible */
+.passCont {
+    position: relative ;
+}
+.visible {
+    position: absolute;
+    top: 30%;
+    right: 0;
+}
+.passCont label {
+    cursor: pointer;
+}
+#showPassword{
+    visibility: hidden;
+}

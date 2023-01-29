@@ -23,7 +23,7 @@
 .imgCont img {
     width: 100%;
     object-fit: cover;
-    height: 100%;
+    height: 100vh;
 }
 .logCont {
     width: 50%;

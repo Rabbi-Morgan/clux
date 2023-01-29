@@ -11,7 +11,11 @@ textarea {
     resize: none;
 }
 
-
+.headerCont, section {
+    width: 90%;
+    max-width: 90%;
+    margin: 0 auto;
+}
 .preloader {
     align-items: center;
     background: #FFF;
@@ -28,11 +32,13 @@ textarea {
     transform: opacity 1s linear;
   }
 .logo {
-    width: 5rem;
-    height: 5rem;
+    width: 4rem;
+    height: 4rem;
 }
 .header {
-    background-color: #555;
+    background-color: #fff;
+    width: 100%;
+    box-shadow: 0px 1px 15px 2px black;
 }
 .createBtn {
     color: white;
@@ -49,7 +55,16 @@ textarea {
     margin: 2rem auto !important;
     /* color: white; */
 }
-
+.btnBlue {
+    background-color: #000B18;
+}
 /* #anu_class_wrapper > div:nth-child(1) {
     margin-bottom: 1rem !important;
 } */
+.createClass a {
+    background-color: #000B18;
+}
+.createClass a:hover, .createClass a:focus {
+    background-color: #000B18;
+    opacity: .9;
+}

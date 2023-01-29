@@ -12,9 +12,9 @@ body {
     color: white;
 }
 
-.table-row-hover:hover {
+/* .table-row-hover:hover {
     background-color: rgba(255, 255, 255, .9) !important;
-}
+} */
 #anu_class input {
     background-color: transparent !important;
 }

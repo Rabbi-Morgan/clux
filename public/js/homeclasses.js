@@ -50,7 +50,7 @@ $(window).on('load',()=>{
               </tr>`
             });
             dataHtml += `</tbody></table>
-        <div class='text-center my-5'><a href="/login" class='btn px-4 py-2' style="background-color: #000B18; color: white;"><i class="fa fa-sign-in pl-2"></i> Teacher Login</a></div>`
+        <div class='text-center my-5'><a href="/login" class='btn px-4 py-2' style="background-color: #000B18; color: white;">Teacher Login <i class="fa fa-arrow-right pl-2"></i> </a></div>`
             class_div.html(dataHtml);
              $('#anu_class').DataTable( {
         language: {

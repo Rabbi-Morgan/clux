@@ -91,6 +91,7 @@ $(window).on('load',function(){
             $('#class').DataTable();
         }
       });    
+      setInterval(getDate_Time, 1000)
 })
 
 function getCurrent(){
@@ -106,4 +107,15 @@ function datetimeLocal(datetime) {
 
 function returnLocalTime(dateData) {
   return new Date(dateData.getTime() + dateData.getTimezoneOffset() * 60000)
+}
+
+let time_date = document.getElementById("time_date");
+
+function getDate_Time(){
+  let today = new Date();
+  let dd = String(today.getDate()).padStart(2, '0');
+  let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+  let yyyy = today.getFullYear();
+  let datetime = `${mm}/${dd}/${yyyy} ${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}`;
+  time_date.innerHTML = datetime;
 }

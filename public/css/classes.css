@@ -1,0 +1,25 @@
+body {
+    background-image: linear-gradient(to right, #f2f2f2, #333);
+}
+.logo {
+    width: 3rem;
+    height: 3rem;
+}
+.time {
+    width: 25rem;
+    max-width: 100%;
+    padding: 1rem;
+    border: 2px solid #DAA425;
+}
+@media screen and (max-width: 450px) {
+    .logo {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+    .createClass {
+        width: 100%;
+    }
+    .createClass a {
+        width: 100%;
+    }
+}

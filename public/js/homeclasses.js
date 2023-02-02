@@ -4,7 +4,7 @@ let dayOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 let monthOfYear = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 $(window).on('load',()=>{
-    let class_div = $("#class");
+    let class_div = $("#classes");
 
     let settings = {
         "url": "/myclasses",
@@ -38,7 +38,9 @@ $(window).on('load',()=>{
               class="rounded-circle"
               />
           <div class="ms-3">
-            <p class="fw-bold mb-1">${cls.teacher_first_name} ${cls.teacher_last_name}</p>
+            <p class="fw-bold mb-1">
+            ${cls.teacher_first_name} ${cls.teacher_last_name}
+            </p>
             </div>
         </div>
                 </td>

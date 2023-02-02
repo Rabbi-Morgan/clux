@@ -1,0 +1,49 @@
+#classes input {
+    color: black;
+    height: 3rem;
+    width: 20rem;
+    max-width: 100%;
+    padding: 0.375rem 0.75rem;
+    border-radius: 0.25rem;
+    font-weight: bold;
+    margin-left: 1rem;
+    cursor: pointer;
+    border: none;
+}
+
+#classes input:focus,
+#classes select:focus {
+    box-shadow: none;
+}
+
+#classes select {
+    height: 3rem;
+    width: 4rem;
+    border: none;
+    cursor: pointer;
+}
+
+#classes label {
+    font-family: inherit;
+    font-weight: bold;
+    user-select: none;
+    position: relative;
+    background-color: white;
+    border-radius: 5px;
+    padding: 0 .5rem;
+    color: #808080;
+}
+
+#classes input:hover {
+    border-color: #000B18;
+}
+
+@media screen and (max-width: 450px) {
+    #classes {
+        position: relative;
+    }
+
+    #classes label {
+        margin-bottom: 1rem;
+    }
+}
